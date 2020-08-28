@@ -39,3 +39,25 @@ class TestANDPerceptron:
 
     def test_1_1_to_1_np(self):
         assert and_perceptron_np(1, 1) == 1
+
+
+def nand_perceptron(x1, x2):
+    x = np.array([x1, x2])
+    w = np.array([-0.5, -0.5])
+    b = 0.7
+    tmp = np.sum(w*x) + b
+    return 1 if tmp > 0 else 0
+
+
+class TestNANDPerceptron:
+    def test_0_0_to_1(self):
+        assert nand_perceptron(0, 0) == 1
+
+    def test_1_0_1(self):
+        assert nand_perceptron(1, 0) == 1
+
+    def test_0_1_1(self):
+        assert nand_perceptron(0, 1) == 1
+
+    def test_1_1_0(self):
+        assert nand_perceptron(1, 1) == 0
