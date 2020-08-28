@@ -4,7 +4,7 @@ from practice import func
 def and_perceptron(x1, x2):
     w1, w2, theta = 0.5, 0.5, 0.7
     #  tmp = ?
-    # return 0 if tmp?theta else 1
+    # return 1 if tmp?theta else 0
 
 
 class TestANDPerceptron:
