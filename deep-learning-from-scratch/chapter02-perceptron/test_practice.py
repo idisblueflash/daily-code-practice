@@ -7,12 +7,19 @@ def and_perceptron(x1, x2):
     # return 1 if tmp?theta else 0
 
 
-def and_perceptron_np(x1, x2):
-    x = None
-    w = None  # use 0.5
-    b = -0.7
-    tmp = None
+def general_perceptron_np(x1, x2, w1, w2, b):
+    x = np.array([x1, x2])
+    w = np.array([w1, w2])
+    tmp = np.sum(x * w) + b
     return 1 if tmp > 0 else 0
+
+
+def and_perceptron_np(x1, x2):
+    return general_perceptron_np(x1, x2, w1=0.5, w2=0.5, b=-0.7)
+
+
+def nand_perceptron(x1, x2):
+    return general_perceptron_np(x1, x2, w1=-0.5, w2=-0.5, b=0.7)
 
 
 class TestANDPerceptron:
@@ -39,14 +46,6 @@ class TestANDPerceptron:
 
     def test_1_1_to_1_np(self):
         assert and_perceptron_np(1, 1) == 1
-
-
-def nand_perceptron(x1, x2):
-    x = np.array([x1, x2])
-    w = np.array([-0.5, -0.5])
-    b = 0.7
-    tmp = np.sum(w*x) + b
-    return 1 if tmp > 0 else 0
 
 
 class TestNANDPerceptron:
