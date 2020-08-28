@@ -8,10 +8,10 @@ def and_perceptron(x1, x2):
 
 
 def and_perceptron_np(x1, x2):
-    x = np.array([x1, x2])
-    w = np.array([0.5, 0.5])
+    x = None
+    w = None  # use 0.5
     b = -0.7
-    tmp = np.sum(x * w) + b
+    tmp = None
     return 1 if tmp > 0 else 0
 
 
