@@ -1,4 +1,4 @@
-from practice import and_perceptron, and_perceptron_np, nand_perceptron, \
+from chapter_02 import and_perceptron, and_perceptron_np, nand_perceptron, \
     or_perceptron_np, xor_perceptron
 
 
