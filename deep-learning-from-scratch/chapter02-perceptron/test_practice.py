@@ -1,5 +1,19 @@
 from practice import and_perceptron, and_perceptron_np, nand_perceptron, \
-    or_perceptron_np
+    or_perceptron_np, xor_perceptron
+
+
+class TestXORPerceptron:
+    def test_0_0_0(self):
+        assert xor_perceptron(0, 0) == 0
+
+    def test_1_0_1(self):
+        assert xor_perceptron(1, 0) == 1
+
+    def test_0_1_1(self):
+        assert xor_perceptron(0, 1) == 1
+
+    def test_1_1_0(self):
+        assert xor_perceptron(1, 1) == 0
 
 
 class TestANDPerceptron:
@@ -29,7 +43,7 @@ class TestANDPerceptron:
 
 
 class TestNANDPerceptron:
-    def test_0_0_to_1(self):
+    def test_0_0_1(self):
         assert nand_perceptron(0, 0) == 1
 
     def test_1_0_1(self):
