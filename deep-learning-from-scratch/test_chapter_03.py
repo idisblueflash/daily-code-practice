@@ -1,13 +1,6 @@
 import numpy as np
 
-
-def step_function_original(x: np.array) -> np.array:
-    return x > 0
-
-
-def step_function_int(x: np.array) -> np.array:
-    y = x > 0
-    return y.astype(np.int)
+from chapter_03 import step_function_original, step_function_int
 
 
 class TestStepFunction:
