@@ -3,15 +3,15 @@ import numpy as np
 
 def and_perceptron(x1, x2):
     w1, w2, theta = 0.5, 0.5, 0.7
-    tmp = None
-    return None
+    tmp = x1 * w1 + x2 * w2
+    return 1 if tmp > theta else 0
 
 
 def general_perceptron_np(x1, x2, w1, w2, b):
-    x = None
-    w = None
-    tmp = None
-    return None
+    x = np.array([x1, x2])
+    w = np.array([w1, w2])
+    tmp = np.sum(x * w) + b
+    return 1 if tmp > 0 else 0
 
 
 def and_perceptron_np(x1, x2):
@@ -27,6 +27,6 @@ def or_perceptron_np(x1, x2):
 
 
 def xor_perceptron(x1, x2):
-    s1 = None
-    s2 = None
-    return None
+    s1 = nand_perceptron(x1, x2)
+    s2 = or_perceptron_np(x1, x2)
+    return and_perceptron_np(s1, s2)
