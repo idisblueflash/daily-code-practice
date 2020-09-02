@@ -22,3 +22,11 @@ class TestStepFunction:
         str_real = [str(r) for r in real]
         assert str_expected == str_real
 
+
+def get_ranged_np_array(start: float, end: float, steps: float) -> np.array:
+    return np.arange(start, end, steps)
+
+
+class TestMisc:
+    def test_generate_array_by_range(self):
+        assert len(get_ranged_np_array(start=-5.0, end=5.0, steps=0.1)) == 100
