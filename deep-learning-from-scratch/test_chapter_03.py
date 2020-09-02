@@ -1,6 +1,7 @@
 import numpy as np
 
-from chapter_03 import step_function_original, step_function_int
+from chapter_03 import step_function_original, step_function_int, \
+    get_ranged_np_array, sigmoid
 
 
 class TestStepFunction:
@@ -23,17 +24,9 @@ class TestStepFunction:
         assert str_expected == str_real
 
 
-def get_ranged_np_array(start: float, end: float, steps: float) -> np.array:
-    return np.arange(start, end, steps)
-
-
 class TestMisc:
     def test_generate_array_by_range(self):
         assert len(get_ranged_np_array(start=-5.0, end=5.0, steps=0.1)) == 100
-
-
-def sigmoid(x: np.array) -> np.array:
-    return 1 / (1 + np.exp(-x))
 
 
 class TestSigmoid:
