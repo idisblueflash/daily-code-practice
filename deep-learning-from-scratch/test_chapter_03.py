@@ -30,3 +30,14 @@ def get_ranged_np_array(start: float, end: float, steps: float) -> np.array:
 class TestMisc:
     def test_generate_array_by_range(self):
         assert len(get_ranged_np_array(start=-5.0, end=5.0, steps=0.1)) == 100
+
+
+def sigmoid(x: np.array) -> np.array:
+    return 1 / (1 + np.exp(-x))
+
+
+class TestSigmoid:
+    def test_case_1(self):
+        x = np.array([-1.0, 1.0, 2.0])
+        assert list(sigmoid(x)) == \
+               [0.2689414213699951, 0.7310585786300049, 0.8807970779778823]
