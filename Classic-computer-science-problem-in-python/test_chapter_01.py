@@ -13,6 +13,6 @@ def test_fibonacci_without_exception():
 
 
 def test_fibonacci_exponentially():
-    assert fib25(10, counter=0) == 55
+    assert fib25(10, counter=0) == 600
 
 
